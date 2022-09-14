@@ -1,24 +1,36 @@
-# README
+# Blograils
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a blog app created in Microverse Ruby on Rails module.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- ![](https://img.shields.io/badge/Github-blueviolet)
+- ![](https://img.shields.io/badge/Ruby_On_Rails-red)
 
-* System dependencies
+## Author
 
-* Configuration
 
-* Database creation
+👤 **Hakim**
 
-* Database initialization
+- GitHub: [@teckim](https://github.com/teckim)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hakim-bhd/)
 
-* How to run the test suite
+## Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+If you wish to run the project locally, please do the following:
 
-* Deployment instructions
+- Clone the repository to your local machine. - **`git clone git@github.com:teckim/blograils.git`**
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/teckim/blograils/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
