@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'faker'
 
 RSpec.describe Post, type: :model do
   subject { described_class.new(title: 'Post One', text: 'This is the post one') }
@@ -10,7 +9,14 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Title attribute should be less than 250 charachter' do
-    subject.title = Faker::String.random(length: 300) # More than 250 charachter
+    subject.title = '
+      It had been a simple realization that had changed Debra\'s
+      life perspective. It was really so simple that she was embarrassed
+      that she had lived the previous five years with the way she measured her worth.
+      Now that she saw what she had been doing, she could see how sad it was.
+      That made her all the more relieved she had made the change.
+      The number of hearts her Instagram posts received wasn\'t any longer the indication of her own self-worth.
+    ' # More than 250 charachter
     expect(subject).to_not be_valid
   end
 
