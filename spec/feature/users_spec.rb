@@ -9,7 +9,6 @@ describe 'the user views:', type: :feature do
   end
 
   it 'renders the user details view' do
-    user = User.first
     visit '/users/1'
 
     expect(current_path).to eq('/users/1')
