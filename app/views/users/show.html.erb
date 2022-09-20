@@ -1,1 +1,30 @@
-<h1>User details</h1>
+<div class="flex flex-col gap-y-6">
+  <div class="flex gap-x-4">
+    <div class="w-48 h-48 shrink-0">
+      <img class="max-w-full max-h-full h-full rounded-lg" src="<%= @user.photo %>" alt="Profile picture">
+    </div>
+    <div class="flex flex-col my-4">
+      <div class="text-2xl font-mono mb-2">
+        <%= @user.name %>
+      </div>
+      <div class="text-gray-400 text-xs italic">
+        <%= @user.posts_counter ? 'No post yet by this author' : "#{@user.posts_counter} post(s) has been published" %>
+      </div>
+      <div class="text-gray-400 text-xs italic">
+        Joined in <%= @user.created_at.strftime("%B, %e at %H:%M") %>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-lg bg-slate-50 w-full p-4">
+    <h2 class="text-lg mb-1">Bio</h2>
+    <p class="text-gray-600"><%= @user.bio %></p>
+  </div>
+  <%= render @user.last_three_posts %>
+  <div class="mx-auto">
+    <%= link_to user_posts_path(@user) do %>
+      <span class="rounded px-4 py-2 bg-slate-50 outline outline-indigo-600">
+        See all posts
+      </span>
+    <% end %>
+  </div>
+</div>
