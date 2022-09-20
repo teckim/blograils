@@ -1,0 +1,24 @@
+<%= link_to "/users/#{user.id}" do %>
+  <div class="rounded-lg border-2 border-slate-100 bg-slate-50 w-full">
+    <div class="flex gap-x-8">
+      <div class="w-32 h-32 shrink-0">
+        <img class="max-w-full max-h-full rounded-lg" src="<%= user.photo %>" alt="Profile picture">
+      </div>
+      <div class="min-w-0 flex flex-col gap-y-1 my-3">
+        <div class="text-2xl font-mono">
+          <%= user.name %>
+        </div>
+        <div class="mb-auto">
+          <p class="text-gray-500 text-sm truncate">
+            <%= user.bio %>
+          </p>
+        </div>
+        <div>
+          <%= render layout: "shared/tag" do %>
+            <%= user.posts_counter %> Posts
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
