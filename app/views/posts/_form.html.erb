@@ -1,0 +1,14 @@
+<% input_classes = 'rounded border-none shadow-md outline outline-slate-200 w-96' %>
+<%= form_with model: Post, class: 'flex flex-col gap-y-6' do |form| %>
+  <div>
+    <%= form.text_field :title, placeholder: 'Title', class: input_classes %>
+  </div>
+  <div>
+    <%= form.text_area :text, placeholder: 'Post description...', class: input_classes %>
+  </div>
+  <div>
+    <button type="submit" class="rounded px-4 py-2 bg-white shadow-md outline outline-slate-200">
+      Register
+    </button>
+  </div>
+<% end %>

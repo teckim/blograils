@@ -5,18 +5,26 @@
         <%= @post.title %>
         <span class="text-xs text-gray-600 italic">By <%= @post.author.name %></span>
       </h2>
-      <div>
-        <%= render layout: "shared/tag" do %>
-          <%= @post.comments_counter %> Comments
-        <% end %>
-        <%= render layout: "shared/tag" do %>
-          <%= @post.likes_counter %> Likes
-        <% end %>
+      <div class="flex divide-x gap-x-2">
+        <div>
+          <%= render layout: "shared/tag" do %>
+            <%= pluralize(@post.comments_counter, 'Comments') %>
+          <% end %>
+          <%= render layout: "shared/tag" do %>
+            <%= pluralize(@post.likes_counter, 'Like') %>
+          <% end %>
+        </div>
+        <div class="pl-2">
+          <%= render partial: 'likes/form', locals: { post_id: @post.id } %>
+        </div>
       </div>
     </div>
     <p class="text-gray-600"><%= @post.text %></p>
   </div>
   <div class="flex flex-col gap-y-2">
-    <%= render partial: 'shared/comment', collection: @post.comments  %>
+    <%= render partial: 'comments/comment', collection: @post.comments  %>
+  </div>
+  <div>
+    <%= render partial: 'comments/form', locals: { post: @post }  %>
   </div>
 </div>

@@ -1,0 +1,12 @@
+<% input_classes = 'rounded border-none shadow-md outline outline-slate-200 w-full' %>
+<%= form_with model: Comment, class: 'flex gap-x-4' do |form| %>
+  <%= form.hidden_field :post_id, value: post.id %>
+  <div class="w-full min-w-0">
+    <%= form.text_field :text, placeholder: 'Your comment...', class: input_classes %>
+  </div>
+  <div>
+    <button type="submit" class="rounded px-4 py-2 bg-white shadow-md outline outline-slate-200">
+      Comment
+    </button>
+  </div>
+<% end %>

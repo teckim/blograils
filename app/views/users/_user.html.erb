@@ -15,7 +15,7 @@
         </div>
         <div>
           <%= render layout: "shared/tag" do %>
-            <%= user.posts_counter %> Posts
+            <%= pluralize(user.posts_counter, 'Post') %>
           <% end %>
         </div>
       </div>
