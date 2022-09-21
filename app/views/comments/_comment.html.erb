@@ -1,0 +1,9 @@
+<div class="flex items-center gap-x-4 rounded-lg bg-slate-50/80 w-full p-4">
+  <div>
+    <%= render partial: 'shared/avatar', locals: { photo: comment.author.photo } %>
+  </div>
+  <div>
+    <div class="text-gray-600 text-sm"><%= comment.author.name %></div>
+    <div class="text-sm"><%= comment.text %></div>
+  </div>
+</div>

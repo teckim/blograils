@@ -8,7 +8,7 @@
         <%= @user.name %>
       </div>
       <div class="text-gray-400 text-xs italic">
-        <%= @user.posts_counter ? 'No post yet by this author' : "#{@user.posts_counter} post(s) has been published" %>
+        <%= @user.posts_counter ? 'No posts yet by this author' : "#{pluralize(@user.posts_counter, 'post')} has been published" %>
       </div>
       <div class="text-gray-400 text-xs italic">
         Joined in <%= @user.created_at.strftime("%B, %e at %H:%M") %>
@@ -22,7 +22,7 @@
   <%= render @user.last_three_posts %>
   <div class="mx-auto">
     <%= link_to user_posts_path(@user) do %>
-      <span class="rounded px-4 py-2 bg-slate-50 outline outline-indigo-600">
+      <span class="rounded px-4 py-2 bg-white shadow-md outline outline-slate-200">
         See all posts
       </span>
     <% end %>
