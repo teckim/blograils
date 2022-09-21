@@ -4,13 +4,8 @@ class LikesController < ApplicationController
     @author = current_user
     @like.author = @author
 
-    if (@like.valid?)
-      @like.save
-
-      redirect_to post_path @like.post
-    else
-      redirect_to post_path @like.post
-    end
+    @like.save if @like.valid?
+    redirect_to post_path @like.post
   end
 
   private

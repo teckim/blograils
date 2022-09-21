@@ -4,13 +4,8 @@ class CommentsController < ApplicationController
     @author = current_user
     @comment.author = @author
 
-    if (@comment.valid?)
-      @comment.save
-
-      redirect_to post_path(@comment.post)
-    else
-      redirect_to post_path(@comment.post)
-    end
+    @comment.save if @comment.valid?
+    redirect_to post_path(@comment.post)
   end
 
   private

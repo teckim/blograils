@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :fetch_author, only: [:index, :show]
+  before_action :fetch_author, only: %i[index show]
 
   def index
     @posts = @author ? @author.posts : Post.all
@@ -9,15 +9,14 @@ class PostsController < ApplicationController
     @post = @author ? @author.posts.find(params[:id]) : Post.find(params[:id])
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @post = Post.new post_params
     @author = current_user
     @post.author = @author
 
-    if (@post.valid?)
+    if @post.valid?
       @post.save
 
       redirect_to user_posts_path(@author)
