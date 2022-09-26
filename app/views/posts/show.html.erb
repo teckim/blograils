@@ -1,25 +1,23 @@
 <div class="flex flex-col gap-y-6">
   <div class="rounded-lg bg-slate-50 w-full p-4">
-    <div class="flex justify-between mb-2">
-      <h2>
-        <%= @post.title %>
-        <span class="text-xs text-gray-600 italic">By <%= @post.author.name %></span>
-      </h2>
-      <div class="flex divide-x gap-x-2">
-        <div>
-          <%= render layout: "shared/tag" do %>
-            <%= pluralize(@post.comments_counter, 'Comments') %>
-          <% end %>
-          <%= render layout: "shared/tag" do %>
-            <%= pluralize(@post.likes_counter, 'Like') %>
-          <% end %>
-        </div>
-        <div class="pl-2">
-          <%= render partial: 'likes/form', locals: { post_id: @post.id } %>
-        </div>
-      </div>
+    <div class="flex flex-col gap-x-2 items-baseline mb-2">
+      <span class="text-lg"><%= @post.title %></span>
+      <span class="text-xs text-gray-600 italic">By <%= @post.author.name %></span>
     </div>
     <p class="text-gray-600"><%= @post.text %></p>
+    <div class="flex divide-x gap-x-2 mt-4">
+      <div>
+        <%= render layout: "shared/tag" do %>
+          <%= pluralize(@post.comments_counter, 'Comment') %>
+        <% end %>
+        <%= render layout: "shared/tag" do %>
+          <%= pluralize(@post.likes_counter, 'Likes') %>
+        <% end %>
+      </div>
+      <div class="pl-2">
+        <%= render partial: 'likes/form', locals: { post_id: @post.id } %>
+      </div>
+    </div>
   </div>
   <div class="flex flex-col gap-y-2">
     <%= render partial: 'comments/comment', collection: @post.comments  %>
