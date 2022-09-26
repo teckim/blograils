@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :fetch_author, only: %i[index show]
 
   def index
-    @posts = @author ? @author.posts : Post.all
+    @posts = @author ? @author.posts.includes(:comments, :author) : Post.includes(:comments, :author).all
   end
 
   def show
