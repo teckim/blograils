@@ -8,7 +8,7 @@
         <%= @user.name %>
       </div>
       <div class="text-gray-400 text-xs italic">
-        <%= @user.posts_counter ? 'No posts yet by this author' : "#{pluralize(@user.posts_counter, 'post')} has been published" %>
+        <%= @user.posts_counter == 0 ? 'No posts yet by this author' : "#{pluralize(@user.posts_counter, 'post')} has been published" %>
       </div>
       <div class="text-gray-400 text-xs italic">
         Joined in <%= @user.created_at.strftime("%B, %e at %H:%M") %>
@@ -20,10 +20,15 @@
     <p class="text-gray-600"><%= @user.bio %></p>
   </div>
   <%= render @user.last_three_posts %>
-  <div class="mx-auto">
+  <div class="flex justify-center gap-x-4">
     <%= link_to user_posts_path(@user) do %>
       <span class="rounded px-4 py-2 bg-white shadow-md outline outline-slate-200">
         See all posts
+      </span>
+    <% end %>
+    <%= link_to new_post_path do %>
+      <span class="rounded px-4 py-2 text-white bg-red-400 shadow-md outline outline-red-400">
+        Create new post
       </span>
     <% end %>
   </div>
