@@ -49,6 +49,8 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'tailwindcss-rails', '~> 2.0'
+gem 'devise'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -75,5 +77,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'tailwindcss-rails', '~> 2.0'
