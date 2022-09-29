@@ -1,0 +1,28 @@
+<div class="bg-slate-200">
+  <div class="container flex justify-between items-center h-16 mx-auto">
+    <%= link_to root_path do %>
+      <div class="font-semibold text-primary-500">BLOGRAILS.</div>
+    <% end %>
+    <div>
+      <%- if user_signed_in? %>
+        <div class="flex items-center gap-x-4">
+          <div>
+            <%= render partial: 'shared/avatar', locals: { photo: current_user.photo } %>
+          </div>
+          <div>
+            <div class="text-gray-800 font-mono"><%= current_user.name %></div>
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+              <div class="text-primary-400 text-sm">Logout</div>
+            <% end %>
+          </div>
+        </div>
+      <%- else  %>
+        <div>
+          <%= link_to new_user_session_path do %>
+            <div class="px-2 py-1 rounded text-primary-400 border border-primary-400 font-semibold">Login</div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

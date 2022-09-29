@@ -1,4 +1,6 @@
 class Users::DeviseController < ApplicationController
+  layout 'application'
+
   class Responder < ActionController::Responder
     def to_turbo_stream
       controller.render(options.merge(formats: :html))

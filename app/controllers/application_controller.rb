@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
+  layout 'main'
   skip_before_action :verify_authenticity_token
   before_action :update_allowed_parameters, if: :devise_controller?
-  # prevent users to perfrom action without authentication
-  before_action :authenticate_user!
 
   protected
 

@@ -14,7 +14,7 @@ module.exports = {
         primary: colors.rose,
       },
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        sans: ["'Lato'", ...defaultTheme.fontFamily.sans],
       },
     },
   },
