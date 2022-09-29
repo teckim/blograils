@@ -1,0 +1,9 @@
+<% content_for :content do %>
+  <header>
+    <%= render 'shared/header' %>
+  </header>
+  <main class="container mx-auto my-28">
+    <%= yield %>
+  </main>
+<% end %>
+<%= render template: "layouts/application" %>

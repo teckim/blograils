@@ -6,11 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   </head>
-
   <body>
     <div class="absolute left-4 top-3 text-sm">
       <% if notice %>
@@ -20,8 +21,6 @@
         <div class="py-2 px-4 rounded bg-rose-100 text-rose-600 w-96 relative overflow-hidden before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-red-500"><%= alert %></div>
       <% end %>
     </div>
-    <main class="container mx-auto my-28">
-      <%= yield %>
-    </main>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>
