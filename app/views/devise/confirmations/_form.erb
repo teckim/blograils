@@ -1,0 +1,22 @@
+<% input_classes = 'rounded border-none shadow w-full' %>
+<% label_classes = 'text-xs font-normal text-slate-600' %>
+<div class="w-96 mx-auto">
+  <%= form_for resource, as: resource_name, url: confirmation_path(resource_name) do |form| %>
+    <div class="p-6 rounded shadow-md bg-slate-50">
+      <div class="flex flex-col gap-y-2">
+        <div class=" text-xl text-center">Resend confirmation</div>
+        <div>
+          <%= render 'devise/shared/error_messages', resource: resource %>
+        </div>
+        <div>
+          <%= form.email_field :email, class: input_classes, placeholder: 'Email', autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button type="submit" class="w-full rounded px-4 py-2 bg-primary-400 shadow-md text-white">
+          Resend email
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>
