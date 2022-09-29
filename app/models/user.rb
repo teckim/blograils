@@ -19,6 +19,6 @@ class User < ApplicationRecord
   private
 
   def set_defaults
-    self.photo = 'https://xsgames.co/randomusers/assets/avatars/male/71.jpg' if self.photo.blank?
+    self.photo = 'https://xsgames.co/randomusers/assets/avatars/male/71.jpg' if photo.blank?
   end
 end
