@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api do
+    post '/auth/login', to: 'authentication#login'
     resources :users, only: [] do
       resources :posts, only: [:index] do
         resources :comments, only: %i[index create]
