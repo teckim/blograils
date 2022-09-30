@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  rescue_from CanCan::AccessDenied do | exception |
+  rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
   end
 
