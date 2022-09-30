@@ -1,6 +1,6 @@
 class Api::PostsController < ApiController
   before_action :fetch_author, only: %i[index show]
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authorize_request
 
   def index
     @posts = @author ? @author.posts.includes(:comments, :author) : Post.includes(:comments, :author).all
