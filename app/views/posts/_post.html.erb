@@ -23,7 +23,7 @@
       </div>
       <div class="pl-2 flex gap-x-2">
         <%= render partial: 'likes/form', locals: { post_id: post.id } %>
-        <%= render partial: 'posts/delete_button', locals: { post_id: post.id } %>
+        <%= render partial: 'posts/delete_button', locals: { post_id: post.id } if can? :destroy, post %>
       </div>
     </div>
   </div>
