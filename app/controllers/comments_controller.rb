@@ -10,6 +10,12 @@ class CommentsController < ApplicationController
     redirect_to post_path(@comment.post)
   end
 
+  def destroy
+    Comment.destroy(params[:id])
+
+    redirect_to :back
+  end
+
   private
 
   def comment_params
