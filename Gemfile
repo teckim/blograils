@@ -50,6 +50,8 @@ gem 'bootsnap', require: false
 
 gem 'active_model_serializers', '~> 0.10.13'
 gem 'devise'
+gem 'jwt'
+gem 'bcrypt', '~> 3.1.7'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tailwindcss-rails', '~> 2.0'
 
