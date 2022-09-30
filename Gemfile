@@ -49,9 +49,9 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'jwt'
-gem 'bcrypt', '~> 3.1.7'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tailwindcss-rails', '~> 2.0'
 
