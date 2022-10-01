@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_user!, only: [:create]
 
   def create
@@ -8,6 +10,12 @@ class CommentsController < ApplicationController
 
     @comment.save if @comment.valid?
     redirect_to post_path(@comment.post)
+  end
+
+  def destroy
+    Comment.destroy(params[:id])
+
+    redirect_to :back
   end
 
   private

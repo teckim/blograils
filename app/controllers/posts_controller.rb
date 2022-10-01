@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :fetch_author, only: %i[index show]
+  load_and_authorize_resource
+
+  before_action :fetch_author, only: %i[index show destroy]
   before_action :authenticate_user!, only: %i[new create]
 
   def index
@@ -24,6 +26,12 @@ class PostsController < ApplicationController
     else
       redirect_to new_post_path
     end
+  end
+
+  def destroy
+    Post.destroy(params[:id])
+
+    redirect_to @author ? user_posts_path(@author) : posts_path
   end
 
   private
