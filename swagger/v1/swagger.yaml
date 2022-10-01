@@ -1,0 +1,54 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/auth/login":
+    post:
+      summary: User login
+      tags:
+      - Auth
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/users/{user_id}/posts":
+    get:
+      summary: Retrieves user posts
+      tags:
+      - User Posts
+      security:
+      - basic_auth: []
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: name found
+components:
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+servers:
+- url: http://127.0.0.1:3000
+  variables:
+    defaultHost:
+      default: www.example.com
