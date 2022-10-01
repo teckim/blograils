@@ -49,6 +49,12 @@ $ cd blograils
 - GitHub: [@teckim](https://github.com/teckim)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hakim-bhd/)
 
+👤 **Ali**
+
+- GitHub: [@aliatayee](https://github.com/aliatayee)
+- Twitter: [@aqaatayee](https://twitter.com/aqaatayee)
+- LinkedIn: [@aliatayee](https://www.linkedin.com/in/aliatayee/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
