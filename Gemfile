@@ -51,6 +51,9 @@ gem 'bootsnap', require: false
 gem 'active_model_serializers', '~> 0.10.13'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan'
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 gem 'devise'
 gem 'jwt'
